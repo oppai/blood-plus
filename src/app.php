@@ -8,7 +8,8 @@ $app['debug'] = true;
 $app['asset_path'] = '/blood-plus/public';
 
 $app->get("/", function () use ($app) {
-    return 'hello';
+    $blood = new BloodPlus('','','');
+    return $blood->donations();
 });
 
 return $app;
